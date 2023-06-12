@@ -1,10 +1,8 @@
 const express = require('express');
 const userRouter = express.Router();
-// const { UserModel } = require("../model/user.model");
-
+const { UserModel } = require('../model/user.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { UserModel } = require('../model/User.model');
 
 // registration
 userRouter.post('/register', async (req, res) => {
@@ -29,7 +27,7 @@ userRouter.post('/register', async (req, res) => {
 						is_married,
 					});
 					await newUser.save();
-					res.status(200).json({ msg: 'new data of user has been added' });
+					res.status(200).json({ msg: 'new user has been added' });
 				}
 			});
 		}
