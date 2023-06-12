@@ -1,8 +1,10 @@
-const mongoose= require('mongoose');
-require('dotenv').config()
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-    let connection=  mongoose.connect(process.env.mongoURL);  
+let connection = mongoose.connect(
+	'mongodb+srv://Sarthak:Ahuja@cluster0.epcvqru.mongodb.net/instagram_masai?retryWrites=true&w=majority'
+);
 
-module.exports={
-    connection,
-}
+module.exports = {
+	connection,
+};
