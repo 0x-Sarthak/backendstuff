@@ -9,9 +9,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
-app.get('/', (req, res) => {
-	res.send('Homepage');
-});
+
 app.listen(process.env.PORT, async (req, res) => {
 	try {
 		await connection;
