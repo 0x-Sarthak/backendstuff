@@ -25,13 +25,4 @@ module.exports = {
   UserModel,
 };
 
-/*
-name ==> String
-email ==> String
-gender ==> String
-password ==> String
-age ==> Number
-city ==> String
-is_married ==> boolean
 
-*/
