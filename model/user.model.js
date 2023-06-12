@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-//userSchema
-
 const userSchema = mongoose.Schema(
   {
     name: String,
@@ -17,12 +15,36 @@ const userSchema = mongoose.Schema(
   }
 );
 
-// userModel
+const logoutSchema = mongoose.Schema(
+  {
+    token: String,
+  },
+  {
+    versionKey: false,
+  }
+);
 
-const UserModel = mongoose.model("users", userSchema);
+   
+const postSchema = mongoose.Schema({
+  title: String,
+  body: String,
+  device: {
+    type: String,
+    enum: ["Laptop", "Tablet", "Mobile"],
+  },
+  no_of_comments: Number,
+  userID:String,
+  user:String
+});
+
+//model
+const userModel = mongoose.model("user", userSchema);
+const logoutModel = mongoose.model("blacklist", logoutSchema);
+
+const postModel= mongoose.model("post", postSchema);
 
 module.exports = {
-  UserModel,
+  userModel,
+  logoutModel,
+  postModel
 };
-
-
